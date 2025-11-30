@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cubit Cyber | Strategic Security Consultancy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#020617',  /* Slate 950 - Main Background */
+                            card: '#0f172a',  /* Slate 900 - Cards */
+                            border: '#1e293b', /* Slate 800 - Borders */
+                            primary: '#3b82f6', /* Bright Blue */
+                            accent: '#2dd4bf', /* Teal */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .blob {
+            position: absolute;
+            filter: blur(60px);
+            z-index: -1;
+            opacity: 0.25;
+            animation: move 15s infinite alternate;
+        }
+
+        @keyframes move {
+            from {
+                transform: translate(0, 0) scale(1);
+            }
+
+            to {
+                transform: translate(30px, -30px) scale(1.1);
+            }
+        }
+
+        /* Custom Scrollbar for Dark Mode */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #020617;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-slate-400 bg-brand-dark antialiased selection:bg-brand-primary selection:text-white">
+
+    <!-- Navigation -->
+    <div class="fixed w-full z-50 top-6 px-4 transition-all duration-300" id="navbar-wrapper">
+        <!-- Changed bg-slate-950/50 to bg-white/5 for better contrast and "glass" feel -->
+        <nav class="max-w-5xl mx-auto bg-white/5 backdrop-blur-xl border border-white/10 rounded-full shadow-2xl ring-1 ring-white/5 transition-all duration-300"
+            id="navbar">
+            <div class="px-6 md:px-8">
+                <div class="flex justify-between h-16 items-center">
+                    <!-- Logo -->
+                    <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+                        <!-- White wrapper for JPG logo -->
+                        <div
+                            class="w-8 h-8 bg-white rounded-full flex items-center justify-center overflow-hidden shadow-sm ring-2 ring-white/20">
+                            <img src="logo.png" alt="Cubit Cyber Logo"
+                                class="w-full h-full object-contain transform scale-110">
+                        </div>
+                        <span class="font-bold text-lg tracking-tight text-white">Cubit<span
+                                class="text-brand-primary">Cyber</span></span>
+                    </div>
+
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:flex space-x-8 items-center">
+                        <a href="#services"
+                            class="text-sm font-medium text-slate-300 hover:text-white transition">Services</a>
+                        <a href="#approach" class="text-sm font-medium text-slate-300 hover:text-white transition">Our
+                            Approach</a>
+                        <a href="#about"
+                            class="text-sm font-medium text-slate-300 hover:text-white transition">About</a>
+                        <a href="#contact"
+                            class="px-5 py-2 bg-brand-primary text-white text-sm rounded-full font-bold hover:bg-blue-600 transition shadow-lg shadow-brand-primary/20 transform hover:-translate-y-0.5 border border-white/10">
+                            Book a Chat
+                        </a>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden flex items-center">
+                        <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none p-2">
+                            <i class="fa-solid fa-bars text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 px-6 py-4 space-y-2">
+                <a href="#services"
+                    class="block px-4 py-2 text-slate-300 font-medium hover:bg-white/10 hover:text-white rounded-lg transition">Services</a>
+                <a href="#approach"
+                    class="block px-4 py-2 text-slate-300 font-medium hover:bg-white/10 hover:text-white rounded-lg transition">Our
+                    Approach</a>
+                <a href="#about"
+                    class="block px-4 py-2 text-slate-300 font-medium hover:bg-white/10 hover:text-white rounded-lg transition">About</a>
+                <a href="#contact"
+                    class="block px-4 py-2 text-brand-primary font-bold hover:bg-white/10 rounded-lg transition">Book
+                    Consultation</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Background Blobs -->
+        <div class="blob bg-brand-primary w-96 h-96 rounded-full top-0 left-0 -translate-x-1/2 -translate-y-1/2"></div>
+        <div
+            class="blob bg-brand-accent w-80 h-80 rounded-full bottom-0 right-0 translate-x-1/3 translate-y-1/3 animation-delay-2000">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center max-w-3xl mx-auto">
+
+                <!-- Status Badge -->
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/80 border border-slate-700 text-slate-200 text-sm font-semibold mb-8 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
+                    Accepting New Clients for Q4 2025
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-bold text-white tracking-tight leading-tight mb-6">
+                    Stop Guessing. <br>
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">Start
+                        Governing.</span>
+                </h1>
+
+                <p class="text-xl text-slate-400 mb-10 leading-relaxed">
+                    We help businesses manage their external attack surface, audit their M365 & Identity configurations,
+                    and select the right security tools without the noise.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#contact"
+                        class="px-8 py-4 bg-brand-primary text-white rounded-full font-bold text-lg hover:bg-blue-600 transition shadow-lg hover:shadow-brand-primary/30 transform hover:-translate-y-1">
+                        Get a Free Risk Snapshot
+                    </a>
+                    <a href="#services"
+                        class="px-8 py-4 bg-transparent text-white border border-slate-700 rounded-full font-bold text-lg hover:bg-slate-800 transition">
+                        Explore Services
+                    </a>
+                </div>
+
+                <!-- Trust Badges (Dark Mode) -->
+                <div
+                    class="mt-12 pt-8 border-t border-slate-800 flex flex-wrap justify-center gap-x-12 gap-y-6 text-slate-500 font-semibold opacity-70">
+                    <div class="flex items-center gap-2 hover:text-slate-300 transition"><i
+                            class="fa-brands fa-microsoft text-xl"></i> Microsoft Partner</div>
+                    <div class="flex items-center gap-2 hover:text-slate-300 transition"><i
+                            class="fa-solid fa-shield-cat text-xl"></i> CIS Controls</div>
+                    <div class="flex items-center gap-2 hover:text-slate-300 transition"><i
+                            class="fa-solid fa-lock text-xl"></i> ISO 27001 Aligned</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-brand-card border-y border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-brand-primary font-bold tracking-wide uppercase text-sm mb-3">What We Do</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">Security Basics, Mastered.</h3>
+                <p class="text-slate-400 max-w-2xl mx-auto">We don't sell "magic boxes." We do the hard work of
+                    configuration, auditing, and helping you choose the right vendors.</p>
+            </div>
+
+            <!-- Grid Layout -->
+            <div class="grid md:grid-cols-2 gap-8">
+
+                <!-- Service 1: EASM -->
+                <div
+                    class="bg-brand-dark p-8 rounded-2xl border border-brand-border hover:border-brand-primary transition duration-300 group flex flex-col hover:shadow-2xl hover:shadow-brand-primary/10">
+                    <div class="flex items-start justify-between mb-6">
+                        <div
+                            class="w-14 h-14 bg-blue-900/30 rounded-xl flex items-center justify-center text-blue-400 group-hover:bg-brand-primary group-hover:text-white transition">
+                            <i class="fa-solid fa-globe text-2xl"></i>
+                        </div>
+                        <span
+                            class="px-3 py-1 text-xs font-bold text-blue-300 bg-blue-900/30 rounded-full border border-blue-800">Most
+                            Popular</span>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-3">External Attack Surface</h4>
+                    <p class="text-slate-400 mb-6">We map and monitor your internet-facing assets to identify what
+                        attackers see before they strike. This is a continuous discovery process.</p>
+                    <div class="mt-auto bg-slate-900/50 rounded-xl p-5 border border-slate-800">
+                        <h5 class="font-bold text-slate-200 mb-3 text-sm uppercase tracking-wide">What's Included:</h5>
+                        <ul class="space-y-3 text-slate-400 text-sm">
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-brand-accent mt-1"></i>
+                                <span><strong>Shadow IT Discovery:</strong> Identifying unknown subdomains, forgotten
+                                    servers, and dev environments.</span>
+                            </li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-brand-accent mt-1"></i>
+                                <span><strong>Vulnerability Mapping:</strong> CVE checking on all exposed assets.</span>
+                            </li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-brand-accent mt-1"></i>
+                                <span><strong>Open Port Analysis:</strong> Detection of exposed RDP, SSH, or database
+                                    ports.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 2: IDM Audit -->
+                <div
+                    class="bg-brand-dark p-8 rounded-2xl border border-brand-border hover:border-brand-accent transition duration-300 group flex flex-col hover:shadow-2xl hover:shadow-brand-accent/10">
+                    <div class="flex items-start justify-between mb-6">
+                        <div
+                            class="w-14 h-14 bg-teal-900/30 rounded-xl flex items-center justify-center text-teal-400 group-hover:bg-brand-accent group-hover:text-white transition">
+                            <i class="fa-solid fa-id-card text-2xl"></i>
+                        </div>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-3">Identity (IDM) Security Audit</h4>
+                    <p class="text-slate-400 mb-6">Identity is the new perimeter. We perform a deep-dive audit of your
+                        Microsoft Entra (Azure AD) and identity provider configurations.</p>
+                    <div class="mt-auto bg-slate-900/50 rounded-xl p-5 border border-slate-800">
+                        <h5 class="font-bold text-slate-200 mb-3 text-sm uppercase tracking-wide">What's Included:</h5>
+                        <ul class="space-y-3 text-slate-400 text-sm">
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-brand-accent mt-1"></i>
+                                <span><strong>Conditional Access Review:</strong> Ensuring MFA is enforced and policies
+                                    are gap-free.</span>
+                            </li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-brand-accent mt-1"></i>
+                                <span><strong>Privileged Identity (PIM):</strong> Auditing Global Admins and
+                                    Just-In-Time access.</span>
+                            </li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-brand-accent mt-1"></i>
+                                <span><strong>App Registration Audit:</strong> Identifying risky OAuth
+                                    applications.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 3: Microsoft 365 Security -->
+                <div
+                    class="bg-brand-dark p-8 rounded-2xl border border-brand-border hover:border-sky-500 transition duration-300 group flex flex-col hover:shadow-2xl hover:shadow-sky-500/10">
+                    <div
+                        class="w-14 h-14 bg-sky-900/30 rounded-xl flex items-center justify-center text-sky-400 mb-6 group-hover:bg-sky-500 group-hover:text-white transition">
+                        <i class="fa-brands fa-microsoft text-2xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-3">Microsoft 365 Tenant Security</h4>
+                    <p class="text-slate-400 mb-6">Your M365 tenant holds your most critical data. We review the
+                        ecosystem beyond just the login screen to prevent data leakage and fraud.</p>
+                    <div class="mt-auto bg-slate-900/50 rounded-xl p-5 border border-slate-800">
+                        <h5 class="font-bold text-slate-200 mb-3 text-sm uppercase tracking-wide">What's Included:</h5>
+                        <ul class="space-y-3 text-slate-400 text-sm">
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-brand-accent mt-1"></i>
+                                <span><strong>Exchange Online:</strong> Anti-phishing policies, SPF/DKIM/DMARC, and
+                                    forwarding rules.</span>
+                            </li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-brand-accent mt-1"></i>
+                                <span><strong>SharePoint & Teams:</strong> External sharing settings and guest access
+                                    review.</span>
+                            </li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-brand-accent mt-1"></i>
+                                <span><strong>Audit Logging:</strong> Verifying unified audit logs are active and
+                                    capturing data.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 4: Edge Device Audit -->
+                <div
+                    class="bg-brand-dark p-8 rounded-2xl border border-brand-border hover:border-indigo-500 transition duration-300 group flex flex-col hover:shadow-2xl hover:shadow-indigo-500/10">
+                    <div
+                        class="w-14 h-14 bg-indigo-900/30 rounded-xl flex items-center justify-center text-indigo-400 mb-6 group-hover:bg-indigo-500 group-hover:text-white transition">
+                        <i class="fa-solid fa-network-wired text-2xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-3">Edge Configuration Audit</h4>
+                    <p class="text-slate-400 mb-6">Your firewall is only as good as its ruleset. We review the
+                        configurations of your perimeter devices (Firewalls, VPN Concentrators).</p>
+                    <div class="mt-auto bg-slate-900/50 rounded-xl p-5 border border-slate-800">
+                        <h5 class="font-bold text-slate-200 mb-3 text-sm uppercase tracking-wide">What's Included:</h5>
+                        <ul class="space-y-3 text-slate-400 text-sm">
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-brand-accent mt-1"></i>
+                                <span><strong>Ruleset Analysis:</strong> Identifying "Any/Any" rules, unused objects,
+                                    and shadowed rules.</span>
+                            </li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-brand-accent mt-1"></i>
+                                <span><strong>VPN Hardening:</strong> Checking encryption standards and split-tunneling
+                                    policies.</span>
+                            </li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-brand-accent mt-1"></i>
+                                <span><strong>Management Plane:</strong> Verifying administrative access is
+                                    restricted.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 5: Advisory & Selection -->
+                <div
+                    class="bg-brand-dark p-8 rounded-2xl border border-brand-border hover:border-orange-500 transition duration-300 group flex flex-col hover:shadow-2xl hover:shadow-orange-500/10">
+                    <div
+                        class="w-14 h-14 bg-orange-900/30 rounded-xl flex items-center justify-center text-orange-400 mb-6 group-hover:bg-orange-500 group-hover:text-white transition">
+                        <i class="fa-solid fa-scale-balanced text-2xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-3">Strategic Advisory & Selection</h4>
+                    <p class="text-slate-400 mb-6">Beyond audits, we act as your impartial advisor. We help you cut
+                        through vendor marketing noise and assess supply chain risk.</p>
+                    <div class="mt-auto bg-slate-900/50 rounded-xl p-5 border border-slate-800">
+                        <h5 class="font-bold text-slate-200 mb-3 text-sm uppercase tracking-wide">What's Included:</h5>
+                        <ul class="space-y-3 text-slate-400 text-sm">
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-brand-accent mt-1"></i>
+                                <span><strong>Tool Evaluation:</strong> Selection guidance for EDR, SIEM, and SOC
+                                    services.</span>
+                            </li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-brand-accent mt-1"></i>
+                                <span><strong>Vendor Risk (TPRM):</strong> Auditing your MSP or supply chain for
+                                    security gaps.</span>
+                            </li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-brand-accent mt-1"></i>
+                                <span><strong>Roadmaps:</strong> Phased, budget-aware security improvement plans.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 6: Cyber Hygiene -->
+                <div
+                    class="bg-brand-dark p-8 rounded-2xl border border-brand-border hover:border-purple-500 transition duration-300 group flex flex-col hover:shadow-2xl hover:shadow-purple-500/10">
+                    <div
+                        class="w-14 h-14 bg-purple-900/30 rounded-xl flex items-center justify-center text-purple-400 mb-6 group-hover:bg-purple-500 group-hover:text-white transition">
+                        <i class="fa-solid fa-shield-virus text-2xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-3">Cyber Hygiene & Readiness</h4>
+                    <p class="text-slate-400 mb-6">Getting the basics right prevents 90% of attacks. We verify the
+                        foundational controls that actually stop ransomware.</p>
+                    <div class="mt-auto bg-slate-900/50 rounded-xl p-5 border border-slate-800">
+                        <h5 class="font-bold text-slate-200 mb-3 text-sm uppercase tracking-wide">What's Included:</h5>
+                        <ul class="space-y-3 text-slate-400 text-sm">
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-brand-accent mt-1"></i>
+                                <span><strong>Endpoint Protection:</strong> Verifying EDR coverage and policy
+                                    settings.</span>
+                            </li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-brand-accent mt-1"></i>
+                                <span><strong>Backup Verification:</strong> Ensuring backups are immutable and
+                                    air-gapped.</span>
+                            </li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-brand-accent mt-1"></i>
+                                <span><strong>Local Admin Review:</strong> Checking for shared local administrator
+                                    passwords (LAPS).</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us / Approach -->
+    <section id="approach" class="py-20 bg-brand-dark overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2">
+                    <div class="relative">
+                        <div class="absolute -top-4 -left-4 w-24 h-24 bg-brand-primary/20 rounded-full z-0 blur-xl">
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                            alt="Team meeting and collaboration"
+                            class="relative z-10 rounded-2xl shadow-2xl shadow-black/50 grayscale hover:grayscale-0 transition duration-700 border border-slate-800">
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-brand-primary font-bold tracking-wide uppercase text-sm mb-3">Our Approach</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">Friendly Guidance.<br>Serious Security.
+                    </h3>
+                    <p class="text-slate-400 text-lg mb-8">
+                        The cybersecurity industry is full of fear, uncertainty, and doubt (FUD). We take a different
+                        approach. We believe in empowering your IT team, not shaming them.
+                    </p>
+
+                    <div class="space-y-8">
+                        <div class="flex gap-4 group">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 bg-slate-800 text-brand-primary border border-slate-700 rounded-full flex items-center justify-center font-bold text-xl group-hover:bg-brand-primary group-hover:text-white transition">
+                                1</div>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Assess & Discover</h4>
+                                <p class="text-slate-400">We start by turning on the lights. We inventory assets and
+                                    review configs without disrupting business.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 group">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 bg-slate-800 text-brand-accent border border-slate-700 rounded-full flex items-center justify-center font-bold text-xl group-hover:bg-brand-accent group-hover:text-white transition">
+                                2</div>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Prioritize</h4>
+                                <p class="text-slate-400">You can't fix everything at once. We rank risks by business
+                                    impact and exploitability.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 group">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 bg-slate-800 text-indigo-400 border border-slate-700 rounded-full flex items-center justify-center font-bold text-xl group-hover:bg-indigo-500 group-hover:text-white transition">
+                                3</div>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Remediate & Roadmap</h4>
+                                <p class="text-slate-400">We help you fix the critical holes immediately and build a
+                                    long-term plan for the rest.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-brand-card border-t border-brand-border relative overflow-hidden">
+        <!-- Decoration -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-primary/5 rounded-bl-full pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to secure your foundation?</h2>
+                <p class="text-slate-400 text-lg">Book a free 15-minute discovery call. No sales pressure, just a chat
+                    about your current setup.</p>
+            </div>
+
+            <div class="bg-brand-dark rounded-2xl shadow-2xl border border-brand-border overflow-hidden p-8 md:p-10">
+                <form onsubmit="event.preventDefault(); alert('Thanks for reaching out!');" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-400 mb-2">Name</label>
+                            <input type="text"
+                                class="w-full px-4 py-3 bg-brand-card rounded-lg border border-slate-700 text-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition"
+                                placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-400 mb-2">Company Email</label>
+                            <input type="email"
+                                class="w-full px-4 py-3 bg-brand-card rounded-lg border border-slate-700 text-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition"
+                                placeholder="john@company.com">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-400 mb-2">What are you concerned
+                            about?</label>
+                        <select
+                            class="w-full px-4 py-3 bg-brand-card rounded-lg border border-slate-700 text-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition">
+                            <option>General Security Roadmap</option>
+                            <option>External Attack Surface (EASM)</option>
+                            <option>Microsoft 365 Tenant Security</option>
+                            <option>Identity (IDM) Security Audit</option>
+                            <option>Strategic Advisory / Tool Selection</option>
+                            <option>Firewall / Edge Audit</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-400 mb-2">Message (Optional)</label>
+                        <textarea rows="4"
+                            class="w-full px-4 py-3 bg-brand-card rounded-lg border border-slate-700 text-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition"
+                            placeholder="Tell us a bit about your environment..."></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full py-4 bg-brand-primary text-white font-bold rounded-lg hover:bg-blue-600 transition transform hover:-translate-y-1 shadow-lg shadow-brand-primary/20">
+                        Send Message
+                    </button>
+
+                    <p class="text-center text-xs text-slate-500 mt-4">We respect your privacy. No spam, ever.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark border-t border-brand-border text-slate-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-3 mb-4 text-white">
+                        <!-- Footer Logo Wrapper -->
+                        <div class="w-8 h-8 bg-white rounded flex items-center justify-center overflow-hidden">
+                            <img src="logo.png" alt="Cubit Cyber Logo" class="w-full h-full object-contain">
+                        </div>
+                        <span class="font-bold text-xl">CubitCyber</span>
+                    </div>
+                    <p class="max-w-xs text-sm">Making enterprise-grade security accessible to businesses who want to
+                        grow safely.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-brand-accent transition">EASM</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition">Advisory & Tooling</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition">M365 & IDM Audits</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition">Risk Assessment</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Connect</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-brand-accent transition">LinkedIn</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition">Twitter / X</a></li>
+                        <li><a href="mailto:info@cubitcyber.com" class="hover:text-brand-accent transition">Email Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
+                <p>&copy; 2025 Cubit Cyber. All rights reserved.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="privacy.html" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const navbar = document.getElementById('navbar');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            // Toggle shape when opening menu to a solid card for readability
+            if (!menu.classList.contains('hidden')) {
+                navbar.classList.remove('rounded-full', 'bg-white/5', 'backdrop-blur-xl');
+                navbar.classList.add('rounded-3xl', 'bg-brand-card', 'backdrop-blur-xl');
+            } else {
+                navbar.classList.add('rounded-full', 'bg-white/5', 'backdrop-blur-xl');
+                navbar.classList.remove('rounded-3xl', 'bg-brand-card', 'backdrop-blur-xl');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                navbar.classList.add('rounded-full', 'bg-white/5', 'backdrop-blur-xl');
+                navbar.classList.remove('rounded-3xl', 'bg-brand-card', 'backdrop-blur-xl');
+            });
+        });
+
+        // Navbar Scroll Effect - Darkens slightly on scroll for readability
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                // When scrolling, make it slightly darker/more opaque for readability
+                navbar.classList.replace('bg-white/5', 'bg-slate-950/80');
+                navbar.classList.add('shadow-xl', 'shadow-black/20');
+            } else {
+                // When at top, go back to clear glass
+                navbar.classList.replace('bg-slate-950/80', 'bg-white/5');
+                navbar.classList.remove('shadow-xl', 'shadow-black/20');
+            }
+        });
+    </script>
+</body>
+
+</html>
