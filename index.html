@@ -408,7 +408,7 @@
                                 class="flex-shrink-0 w-12 h-12 bg-slate-800 text-brand-accent border border-slate-700 rounded-full flex items-center justify-center font-bold text-xl group-hover:bg-brand-accent group-hover:text-white transition">
                                 2</div>
                             <div>
-                                <h4 class="font-bold text-white text-lg">Prioritize</h4>
+                                <h4 class="font-bold text-white text-lg">Prioritise</h4>
                                 <p class="text-slate-400">You can't fix everything at once. We rank risks by business
                                     impact and exploitability.</p>
                             </div>
@@ -442,26 +442,26 @@
             </div>
 
             <div class="bg-brand-dark rounded-2xl shadow-2xl border border-brand-border overflow-hidden p-8 md:p-10">
-                <form onsubmit="event.preventDefault(); alert('Thanks for reaching out!');" class="space-y-6">
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-semibold text-slate-400 mb-2">Name</label>
-                            <input type="text"
+                            <input type="text" name="name"
                                 class="w-full px-4 py-3 bg-brand-card rounded-lg border border-slate-700 text-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition"
-                                placeholder="John Doe">
+                                placeholder="John Doe" required>
                         </div>
                         <div>
                             <label class="block text-sm font-semibold text-slate-400 mb-2">Company Email</label>
-                            <input type="email"
+                            <input type="email" name="email"
                                 class="w-full px-4 py-3 bg-brand-card rounded-lg border border-slate-700 text-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition"
-                                placeholder="john@company.com">
+                                placeholder="john@company.com" required>
                         </div>
                     </div>
 
                     <div>
                         <label class="block text-sm font-semibold text-slate-400 mb-2">What are you concerned
                             about?</label>
-                        <select
+                        <select name="concern"
                             class="w-full px-4 py-3 bg-brand-card rounded-lg border border-slate-700 text-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition">
                             <option>General Security Roadmap</option>
                             <option>External Attack Surface (EASM)</option>
@@ -474,7 +474,7 @@
 
                     <div>
                         <label class="block text-sm font-semibold text-slate-400 mb-2">Message (Optional)</label>
-                        <textarea rows="4"
+                        <textarea rows="4" name="message"
                             class="w-full px-4 py-3 bg-brand-card rounded-lg border border-slate-700 text-white focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition"
                             placeholder="Tell us a bit about your environment..."></textarea>
                     </div>
